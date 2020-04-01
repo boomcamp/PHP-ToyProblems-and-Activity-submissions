@@ -1,6 +1,6 @@
 <?php
 
-namespace HotReloader;
+error_reporting(E_ALL ^ E_NOTICE);
 
 /**
  * HotReloader : Php Hot Reload - Simple live reload feature in a single file
@@ -626,4 +626,13 @@ class HotReloader {
     <?php echo ob_get_clean();
   }
 }
+?>
+
+
+<?php 
+  $reloader = new HotReloader();
+  $reloader->setRoot(__DIR__);
+  $reloader->init();
+  $reloader->currentConfig();
+  $reloader->init();
 ?>
